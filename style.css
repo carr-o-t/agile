@@ -1,0 +1,262 @@
+:root {
+  --card_width: 320px;
+  --row_increment: 10px;
+  --card_border_radius: 16px;
+  --card_small: 26;
+  --card_med: 33;
+  --card_large: 45;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+nav {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(227, 226, 226);
+  box-shadow: 0px 1px 5px rgb(152, 152, 152);
+  margin-bottom: 1rem;
+}
+
+.nav-container {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-items {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-items > a {
+  height: 1rem;
+  aspect-ratio: 1;
+  padding: 10px;
+  border-radius: 100%;
+  background-color: #0029ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: block;
+}
+
+.pfp {
+  height: 1rem;
+  aspect-ratio: 1;
+  background-color: gray;
+}
+
+.nav-items > a:last-child {
+  padding: 0;
+  border-radius: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-items > a > img {
+  height: 1rem;
+  aspect-ratio: 1;
+}
+
+.grid{
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  max-width: 1100px;
+  margin: auto;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 4rem;
+  column-gap: 4rem;
+}
+asset-container {
+  padding: 0;
+  margin: 15px 10px;
+}
+.asset {
+  background-color: white;
+  width: 20rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: fit-content;
+  box-shadow: 1px 1px 10px rgb(215, 215, 215), -1px 1px 10px rgb(215, 215, 215);
+}
+
+.asset-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: fit-content;
+}
+
+.asset-heading {
+  background-color: black;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.asset-media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.asset-description {
+  padding: 1rem;
+  height: fit-content;
+  transition: all ease 300ms;
+}
+.description {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 10px rgb(215, 215, 215), -1px 1px 10px rgb(215, 215, 215);
+  height: 116px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  min-height: 116px;
+  transition: height ease 300ms;
+}
+
+.data-expand {
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  max-height: 20rem;
+  overflow-y: scroll;
+  transition: height ease 300ms;
+}
+
+.read-more {
+  display: flex;
+  justify-content: end;
+  margin-top: 0.2rem;
+}
+
+#arrow {
+  background-color: transparent;
+  border: none;
+  transform: rotat(-360deg);
+  transition: all ease 300ms;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+}
+
+#arrow > img {
+  height: 0.6rem;
+  aspect-ratio: 1;
+}
+
+.active {
+  transform: rotate(-180deg);
+  transition: all ease 300ms;
+}
+
+.sidebar {
+  position: fixed;
+  left: -1%;
+  top: 20%;
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 14rem;
+  transform: translateX(-75%);
+  transition: all ease 300ms;
+}
+
+.active {
+  border: 1px solid gray;
+  transform: translateX(0%);
+  transition: all ease 300ms;
+}
+
+.active > .sidebar-list {
+  opacity: 1;
+}
+
+.sidebar > .sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 0.5rem;
+  background-color: black;
+  padding: 0.7rem 1rem;
+  color: white;
+  align-items: center;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger > img {
+  height: 0.6rem;
+  aspect-ratio: 1;
+  color: white;
+}
+
+.sidebar-list {
+  background-color: white;
+  max-height: 20rem;
+  overflow-y: scroll;
+  opacity: 0;
+}
+
+.sidebar-list > ul {
+  list-style: none;
+}
+
+.sidebar-list > ul > li {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .grid-container {
+    column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+  }
+}
+
+@media only screen and (max-width: 539px) and (min-width: 320px) {
+  .grid-container {
+    column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+  }
+  .nav-items > a {
+    display: none;
+  }
+}
